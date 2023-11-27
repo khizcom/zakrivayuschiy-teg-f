@@ -7,5 +7,6 @@
     --content-width: clamp(375px, 50%, 700px);
     --accent-color: black;
     --border: 2px solid var(--accent-color);
+    --background-color: white;
     
 }

@@ -18,6 +18,7 @@
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-family: var(--main-font);
+  color: var(--accent-color);
   font-variation-settings: 'wght' var(--text-font-weight);
 }
 
@@ -42,7 +43,8 @@
 }
 
 .logo-group-title {
-  font-size: clamp(3.063rem, 2.7109rem + 1.5023vw, 4.063rem);  
+  font-size: clamp(3.063rem, 2.7109rem + 1.5023vw, 4.063rem);
+  text-decoration: none;  
 }
 
 
@@ -59,12 +61,62 @@
 }
 
 .theme-menu__button {
+  text-transform: uppercase;
   border: none;
   background-color: transparent;
+  cursor: pointer;
+  opacity: 1;
+  transition: opacity 0.3s ease;
 }
 
+.theme-menu__button:disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* MAIN */
+
 .main {
+  display: grid;
+  gap: 50px;
   width: var(--content-width);
+  margin: 0 auto;
+}
+
+.card {
+  display: grid;
+  border: var(--border);
+}
+
+.card__title {
+  font-size: 18px;
+  padding: 5px 10px;
+  font-variation-settings: 'wght' var(--title-font-weight);
+}
+
+.card__image-block {
+  display: grid;
+  border: var(--border);
+}
+
+.watermark {
+ position: absolute;
+ justify-self: end;
+ z-index: 1;
+ font-family: var(--accent-font); 
+ font-size: 14px;
+ color: var(--accent-color);
+ margin-block-start: clamp(1.438rem, 1.3722rem + 0.2809vw, 1.625rem);
+ margin-inline-end: clamp(0.688rem, 0.3799rem + 1.3146vw, 1.563rem);
+ opacity: 0.5;
+ mix-blend-mode: hard-light;
+ -webkit-text-stroke: 1px var(--background-color);
+}
+
+.card__image {
+  object-position: center;
+  object-fit: cover;
+  width: 100%;
 }
 
 
