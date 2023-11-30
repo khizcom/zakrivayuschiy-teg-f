@@ -11,5 +11,6 @@
     --mix-blend-color: var(--background-color);
     --background-image-lines: #d3d3d3;
     --background-image: #e7e7e7, #1a1a1a;
+    --heart-fill-color: #FF0000;
     
 }
