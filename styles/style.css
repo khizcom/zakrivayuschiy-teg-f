@@ -45,7 +45,7 @@
   text-transform: uppercase;
   margin: 0 auto;
   padding-block-start: clamp(7.5rem, 7.1479rem + 1.5023vw, 8.5rem);
-  padding-block-end: 25px;
+  padding-block-end: 20px;
   margin-block-end: 100px;
   gap: 25px;
   border: var(--border);
@@ -72,7 +72,7 @@
 
 .theme-menu__list {
   display: grid;
-  gap: 14px;
+  gap: 10px;
   margin-inline-start: 20px;
   font-size: 14px;
 }
@@ -262,7 +262,6 @@
 .button__text {
   font-family: var(--accent-font);
   font-size: 14px;
-  padding: 9px 17px;
   line-height: 90%;
   color: var(--mix-blend-color);
   mix-blend-mode: difference;
@@ -320,7 +319,6 @@
   animation: sparks 0.3s 0.3s ease-in alternate;
 }
 
-
 /* SAVE BUTTON */
 
 .save-button {
@@ -334,7 +332,7 @@
 
 .save-icon {
   width: 21px;
-  color: black;
+  color: var(--mix-blend-color);
   mix-blend-mode: difference;
 }
 
@@ -379,9 +377,9 @@ dialog::backdrop {
   height: 38px;
 }
 
-@media ((hover:hover) and (pointer:fine)) {
+@media ((hover: hover) and (pointer:fine)) {
   .button:hover::before {
-    transform: scale(1,1);
+    transform: scale(1, 1);
   }
 
   .theme-menu__button:hover {
