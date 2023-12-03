@@ -27,7 +27,8 @@
       transparent 2px 4px
     ),
     repeating-linear-gradient(to bottom, var(--background-image));
-  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
   padding-block: 100px;
   min-inline-size: 320px;
   min-block-size: 100dvb;
@@ -253,6 +254,12 @@
   transform: scale(1, 1);
 }
 
+.button:focus-visible {
+  outline: none;
+  border: 2px solid var(--accent-color, #000);
+  box-shadow: 2px 2px 0px 0px #000;
+}
+
 .card__like-button {
   width: 130px;
   height: 38px;
@@ -267,58 +274,6 @@
   mix-blend-mode: difference;
 }
 
-.like-icon {
-  display: block;
-  transition: fill 0.1s linear;
-}
-
-.sparks {
-  opacity: 0;
-}
-
-.core {
-  fill: transparent;
-  transition: fill 0.3s 0.03s linear;
-}
-
-.main-body {
-  fill: transparent;
-  transition: fill 0.3s linear;
-}
-
-.like-icon:active .core {
-  fill: var(--heart-fill-color);
-  transition: fill 0.3s linear;
-}
-
-.like-icon:active .main-body {
-  fill: var(--heart-fill-color);
-  transition: fill 0.3s 0.05s linear;
-}
-
-.like-icon.is-liked .core {
-  fill: var(--heart-fill-color);
-  transition: fill 0.3s linear;
-}
-
-.like-icon.is-liked .main-body {
-  fill: var(--heart-fill-color);
-  transition: fill 0.3s 0.05s linear;
-}
-
-.like-icon.is-liked .contour {
-  fill: var(--heart-fill-color);
-  transition: fill 0.3s 0.06s linear;
-}
-
-.like-icon.is-liked .heart {
-  animation: heart-scale 0.3s 0.1s ease-in alternate;
-}
-
-.like-icon.is-liked .sparks {
-  animation: sparks 0.3s 0.3s ease-in alternate;
-}
-
 /* SAVE BUTTON */
 
 .save-button {
@@ -328,6 +283,7 @@
   display: grid;
   grid-template-columns: repeat(2, auto);
   gap: 8px;
+  cursor: pointer;
 }
 
 .save-icon {
@@ -338,8 +294,7 @@
 
 .dialog[open] {
   width: 357px;
-  height: 193px;
-  padding: 30px;
+  padding: 29px;
   border: var(--border);
   background-color: var(--background-color);
   display: grid;
@@ -362,10 +317,13 @@ dialog::backdrop {
 }
 
 .dialog__title {
+  text-align: left;
   color: var(--accent-color);
   font-family: var(--accent-font);
+  font-weight: 400;
   font-size: 0.875rem;
-  line-height: 150%;
+  line-height: 21px;
+  text-transform: uppercase;
 }
 
 .button-form {
@@ -375,6 +333,7 @@ dialog::backdrop {
 .dialog__button {
   width: 293px;
   height: 38px;
+  cursor: pointer;
 }
 
 @media ((hover: hover) and (pointer:fine)) {
@@ -442,8 +401,8 @@ dialog::backdrop {
 
   .dialog[open] {
     width: 341px;
-    height: 195px;
     padding-inline: 38px;
+    padding-block: 30px;
   }
 
   .dialog__button {
